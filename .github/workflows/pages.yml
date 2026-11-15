@@ -32,8 +32,7 @@ jobs:
       - name: Extract Website
         run: |
           mkdir site
-          unzip -q website.zip -d site
-
+          unzip -q Next_Level_Learning_Academy_GitHub_Pages_SEO_Ready.zip -d site
       - name: Upload Website
         uses: actions/upload-pages-artifact@v3
         with:
