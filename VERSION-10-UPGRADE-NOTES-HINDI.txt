@@ -1,0 +1,29 @@
+NEXT LEVEL LEARNING ACADEMY — VERSION 10
+
+STUDENT-SIDE ADMIN CONTENT ACTIVATION
+
+अब Admin Panel की Learning Lab Content Library में publish किया गया content Student Side पर भी उपयोग किया जा सकता है:
+
+1. Quiz: Admin के प्रश्न, चार विकल्प, सही उत्तर और explanation के साथ interactive quiz। विद्यार्थी हर प्रश्न का उत्तर चुनता है और Submit पर score, सही/गलत/छोड़े गए प्रश्न तथा answer review देखता है।
+2. Typing: Admin द्वारा publish किया गया typing text dedicated Typing Practice page पर दिखाई देता है। विद्यार्थी timer, accuracy और WPM के साथ अभ्यास कर सकता है।
+3. Coding: Admin instructions, starter code और expected outcome Student Coding Practice page पर दिखाई देते हैं। HTML content sandboxed preview में run किया जा सकता है। अन्य languages के लिए editor/expected-output अभ्यास है; Python execution server शामिल नहीं है।
+4. Game Activity: Admin के instructions और tasks checkbox checklist के रूप में दिखाई देते हैं और completion count अपडेट होता है।
+5. केवल Published content ही Student Side पर दिखेगा। Draft/Unpublished सामग्री छिपी रहेगी।
+6. Existing built-in lessons, quiz bank, typing modes, coding tools, games और Supabase tables सुरक्षित रखे गए हैं।
+
+DATABASE / SQL
+- नया SQL आवश्यक नहीं है।
+- Existing public.learning_lab_items table और RLS policies का उपयोग किया गया है।
+- यदि table पहले setup नहीं की है, तो supabase/learning-lab-content.sql एक बार चलाएँ।
+
+LIMITATIONS
+- Quiz attempts इस custom-content module में Supabase पर save नहीं होते; परिणाम उसी session में दिखता है। Existing Admin quiz system अलग और यथावत है।
+- HTML preview sandboxed है। Python/JavaScript server-side execution environment शामिल नहीं है।
+- Typing WPM/accuracy इस custom exercise के page session में calculate होते हैं; dashboard analytics में sync नहीं होते।
+
+INSTALLATION
+1. Website का backup लें।
+2. ZIP extract करके project files replace करें।
+3. Supabase में learning_lab_items table/policy पहले से configured होनी चाहिए।
+4. Admin में Quiz/Typing/Coding/Game content बनाकर Publish करें।
+5. Student Side के Quiz, Typing, Coding या Games page खोलकर प्रकाशित content जाँचें।

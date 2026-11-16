@@ -1,0 +1,22 @@
+NEXT LEVEL LEARNING ACADEMY — VERSION 11
+========================================
+
+1. Admin Content Library से प्रकाशित Custom Quiz देने पर Student का Attempt सुरक्षित रूप से Supabase में Save किया जा सकता है।
+2. विद्यार्थी को Quiz Questions बिना answer-index के मिलते हैं। Submit के बाद PostgreSQL RPC Function score और answer review लौटाता है; विद्यार्थी सीधे score लिखकर submit नहीं कर सकता।
+3. Admin Panel में Learning Lab Quiz Attempts की अलग Report, Average Score, Unique Students और CSV Export उपलब्ध है।
+4. Student Dashboard के Weekly Activity, Recent Activity और Quiz Attempts count में Learning Lab Custom Quizzes भी शामिल हैं।
+5. पुराने Courses, Chapters, Standard Online Quizzes, Typing, Coding, Games और Admin Content Library को बनाए रखा गया है।
+
+INSTALLATION
+------------
+1. Version 10 का Backup लें।
+2. Version 11 ZIP Extract करके Project Files Replace करें।
+3. Supabase SQL Editor में supabase/learning-lab-quiz-attempts.sql को एक बार Run करें।
+4. यह SQL पहले से मौजूद learning_lab_items table पर निर्भर है; यदि वह अभी नहीं है, तो पहले supabase/learning-lab-content.sql Run करें।
+5. Student Login से Admin Published Quiz दें। फिर Admin Panel → Quiz Results & Student Reports में Learning Lab Quiz Attempts देखें।
+
+LIMITATIONS / TEST STATUS
+-------------------------
+- Starter Quiz Bank (quiz-engine.js) अभी browser-only है; उसका result Supabase में Save नहीं होता।
+- Live Supabase project पर SQL/RLS और वास्तविक Student/Admin accounts के साथ integration test करना बाकी है।
+- नया SQL चलाने के बाद ही Custom Quiz Attempts Save और Admin Report उपलब्ध होंगे।

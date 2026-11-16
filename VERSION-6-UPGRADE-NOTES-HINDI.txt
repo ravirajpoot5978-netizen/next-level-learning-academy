@@ -1,0 +1,27 @@
+NEXT LEVEL LEARNING ACADEMY — VERSION 6 UPDATE
+
+इस version में reference learning platforms से प्रेरित usability improvements किए गए हैं। किसी दूसरी website का design copy नहीं किया गया है।
+
+1. Back Button: Home को छोड़कर सभी pages पर ऊपर बाईं ओर Back button। Same-site पिछला page उपलब्ध हो तो वहाँ लौटेगा; direct entry पर Home page खुलेगा।
+2. Quiz Practice: Subject, question count (3/5/all) और timer (5/10/15 minutes) चुनें। Quiz में previous/next navigation, progress bar, countdown और submit option है। Result में score, percentage, correct/wrong/skipped count और हर प्रश्न का selected answer, correct answer तथा explanation दिखता है।
+3. Starter Quiz Bank: 9 subjects में 5-5 starter MCQs उपलब्ध हैं। यह local practice quiz है; इस page का result अभी Supabase में save नहीं होता। Admin-published dashboard quizzes अलग मौजूदा feature हैं।
+4. Typing Practice: Classic lesson, Word Rain, Word Sprint, Sentence Challenge, Accuracy Master और Daily Challenge modes। WPM, accuracy (Kruti Dev में legacy limitation), time, errors और browser-local personal best।
+5. Student Dashboard: Learning Lab shortcuts में Games और Study Assistant भी जोड़े गए।
+6. Subject/Tool navigation और mobile responsive styling को polish किया गया। Programming subject card के malformed icon markup को ठीक किया गया।
+
+DATABASE / SQL
+- इस UI update के लिए नया SQL आवश्यक नहीं है। Existing Supabase setup, course tables, enrollment, progress, quiz tables और admin content tables को नहीं बदला गया।
+- Quiz Practice page का नया starter quiz session browser में चलता है; इसमें login या SQL migration की जरूरत नहीं।
+- Typing personal best उसी browser/device के local storage में रहता है; दूसरे device पर sync नहीं होता।
+
+IMPORTANT LIMITATIONS
+- Word Rain / Word Sprint में starter word prompts हैं; full multiplayer leaderboard नहीं है।
+- Study Assistant अभी predefined basic answers वाला assistant है, live generative AI नहीं।
+- Python practice page अभी lesson/notebook style है; secure Python execution engine शामिल नहीं है।
+- Kruti Dev 010 में exact character-level accuracy तभी सम्भव है जब encoded legacy-font text का मिलान हो; इसीलिए legacy mode में accuracy को अलग label किया जाता है।
+
+INSTALLATION
+1. मौजूदा website folder का backup रखें।
+2. ZIP extract करके पूरे project folder की files hosting/GitHub repository में replace करें।
+3. इस version के लिए नया SQL run न करें। Existing Supabase migrations पहले जैसे लागू रहेंगे।
+4. Login, dashboard, course enrollment, chapter progress, admin upload और published quiz को अपने Supabase project पर staging में test करें।

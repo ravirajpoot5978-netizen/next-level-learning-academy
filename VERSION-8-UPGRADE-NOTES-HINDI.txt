@@ -1,0 +1,34 @@
+NEXT LEVEL LEARNING ACADEMY · VERSION 8
+
+इस अपडेट में Student Dashboard के लिए Personal Learning Insights जोड़े गए हैं।
+
+नई सुविधाएँ:
+1. पिछले 7 दिनों में पूरे किए गए अध्याय और दिए गए क्विज का Activity Chart।
+2. हर Enrolled Course का Completion Percentage।
+3. पूरे और कुल Published Chapters का अनुपात।
+4. हाल की 6 Learning Activities की सूची, तारीख और समय सहित।
+5. Refresh बटन से Insights दोबारा लोड करना।
+6. Hindi, English और Hinglish के अनुसार Insights के Labels।
+7. Mobile Screen के लिए Responsive Layout।
+
+डेटा स्रोत:
+- chapter_progress.completed_at
+- course_chapters
+- quiz_attempts.submitted_at, score और total_questions
+- quizzes और courses
+
+महत्वपूर्ण:
+- कोई नया SQL या Supabase migration आवश्यक नहीं है।
+- Dashboard में केवल वर्तमान लॉग-इन विद्यार्थी का Chapter Progress और Quiz Attempts पढ़े जाते हैं।
+- Weekly Activity का अर्थ पूरे किए गए अध्याय और जमा किए गए क्विज की संख्या है; यह पढ़ाई में बिताए गए समय को नहीं मापता।
+- Course Completion केवल Published Chapters के आधार पर निकाला जाता है।
+- यदि किसी Course में Published Chapters नहीं हैं, तो वह Course Completion सूची में नहीं दिखेगा।
+- वास्तविक डेटा दिखने के लिए Supabase में chapter_progress और quiz_attempts की मौजूदा RLS policies सही होनी चाहिए।
+
+इंस्टॉल:
+1. वर्तमान Website का Backup लें।
+2. ZIP Extract करें।
+3. Extract हुई Next_Level_Learning_Academy_Supabase फोल्डर की files को Hosting/GitHub project में replace करें।
+4. Student Login करके Dashboard में My Learning Insights देखें।
+
+इस Version में SQL Editor में कोई नया SQL चलाने की आवश्यकता नहीं है।

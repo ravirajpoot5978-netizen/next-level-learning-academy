@@ -1,0 +1,11 @@
+(()=>{'use strict';
+if(location.pathname.endsWith('/index.html')||location.pathname==='/' )return;
+if(document.getElementById('nllaBackButton'))return;
+const style=document.createElement('style');
+style.textContent=`#nllaBackButton{position:fixed;z-index:9999;top:12px;left:12px;display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid #cbdaf0;border-radius:999px;background:rgba(255,255,255,.96);color:#174a87;font:700 14px/1.2 Inter,Hind,Arial,sans-serif;text-decoration:none;box-shadow:0 5px 18px rgba(21,55,96,.14);backdrop-filter:blur(8px);transition:transform .18s,box-shadow .18s}#nllaBackButton:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(21,55,96,.2)}#nllaBackButton:focus-visible{outline:3px solid #7cb4ff;outline-offset:3px}@media(max-width:600px){#nllaBackButton{top:8px;left:8px;padding:9px 12px;font-size:13px}}`;
+document.head.appendChild(style);document.body.style.paddingTop='48px';
+const a=document.createElement('a');a.id='nllaBackButton';a.href='index.html';a.setAttribute('aria-label','पिछले पेज पर वापस जाएँ');a.innerHTML='<span aria-hidden="true">←</span><span>Back</span>';
+a.addEventListener('click',e=>{const ref=document.referrer;let same=false;try{same=!!ref&&new URL(ref).origin===location.origin&&new URL(ref).href!==location.href;}catch(_){}if(same&&history.length>1){e.preventDefault();history.back();}});
+document.body.appendChild(a);
+const current=location.pathname.split('/').pop();document.querySelectorAll('.lab-nav a').forEach(link=>{const target=(link.getAttribute('href')||'').split('?')[0];if(target===current){link.setAttribute('aria-current','page');}});
+})();

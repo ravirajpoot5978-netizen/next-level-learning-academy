@@ -1,0 +1,40 @@
+NEXT LEVEL LEARNING ACADEMY
+Computer + Typing + Coding Update
+
+इस पैकेज में:
+1. subject-computer.html को नया Computer Course Hub बनाया गया है।
+2. Computer के 20 अलग-अलग chapter pages जोड़े गए हैं।
+3. Chapter search और category filters जोड़े गए हैं।
+4. Typing Lab को White + Royal Blue professional theme में refresh किया गया है।
+5. Typing Arcade में 12 playable games हैं: Word Rain, Balloon Pop, Space Mission, Typing Race, Code Breaker, Treasure Hunt, Letter Catch, Streak Master, Sentence Sprint, Number Ninja, Word Builder और Accuracy Shield।
+6. Arcade games में English और Hindi mode, timer, score, streak, progress bar और local history जोड़ी गई है।
+7. coding-practice.html को दो editor modes के साथ बनाया गया है:
+   - VS Code Style browser editor: file tabs, HTML/CSS/JS files, preview, reset और project JSON download.
+   - Online Playground: HTML, CSS, JavaScript editors और sandboxed live preview.
+8. Python और C के course overview दिए गए हैं। इस static package में Python/C code execution server शामिल नहीं है।
+9. Coding preview sandboxed iframe में चलता है। यह पूर्ण desktop VS Code नहीं है और server-side execution उपलब्ध नहीं है।
+10. Home Page को focused landing page बनाया गया है। फिलहाल केवल Computer Learning, Typing Lab और Coding Lab दिखाई देते हैं।
+11. बाकी subjects को Home navigation और sitemap से हटाया गया है; उनकी source files इस ZIP में सुरक्षित रखी गई हैं ताकि बाद में फिर जोड़ा जा सके।
+12. Typing Lab और Computer pages से Quiz/अन्य subject navigation हटाया गया है।
+13. Typing speed calculation को correct characters के आधार पर सुधारा गया है; current streak अब consecutive days गिनता है।
+14. White + Royal Blue responsive styling जोड़ी गई है।
+15. Login, Dashboard, Admin, AI Assistant और Supabase backend इस चरण में जानबूझकर नहीं बदले गए हैं; इन्हें बाद के चरण में किया जाएगा।
+
+स्थापना:
+- ZIP को extract करें।
+- Extracted folder के अंदर index.html root में होना चाहिए।
+- GitHub repository में मौजूदा files का backup लेने के बाद package contents upload करें।
+- GitHub Pages deployment के बाद Computer Course, Typing Lab और Coding Lab खोलकर test करें।
+
+QA / TEST SUMMARY:
+- 44 HTML pages parse किए गए।
+- सभी local file links verify किए गए: कोई broken local reference नहीं मिला।
+- Duplicate HTML IDs नहीं मिले।
+- सभी JavaScript files पर Node syntax check पास हुआ।
+- CSS files parse check पास हुआ; sitemap XML valid है।
+- यह static/structural QA है। GitHub पर deploy और Android/mobile पर visual interaction test अभी बाकी है; ZIP upload होने के बाद live test करना होगा।
+
+महत्वपूर्ण:
+- Typing progress browser localStorage में रहता है; अलग device/browser में स्वतः sync नहीं होगा।
+- Python/C execution के लिए future में trusted isolated execution service की जरूरत होगी।
+- इस update में Supabase SQL schema या credentials नहीं बदले गए।

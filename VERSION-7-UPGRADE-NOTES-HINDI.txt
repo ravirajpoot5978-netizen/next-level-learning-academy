@@ -1,0 +1,28 @@
+NEXT LEVEL LEARNING ACADEMY · VERSION 7
+
+इस अपडेट में Admin Panel के अंदर Student Learning Progress Report जोड़ी गई है।
+
+नई सुविधाएँ:
+1. सभी Courses के Enrollments की सूची।
+2. Course के अनुसार Filter।
+3. विद्यार्थी का नाम और उपलब्ध Phone Number।
+4. प्रत्येक Course में पूरे किए गए Chapters और कुल Published Chapters।
+5. Completion Percentage और औसत Completion Summary।
+6. Student Progress CSV Export।
+7. Refresh बटन से नवीनतम Progress डेटा।
+
+तकनीकी जानकारी:
+- Existing Supabase tables: course_enrollments, profiles, courses, course_chapters, chapter_progress.
+- कोई नया SQL या database migration आवश्यक नहीं है।
+- Report मौजूदा Admin login और Supabase RLS policies के अंतर्गत काम करती है।
+- अधिकतम 500 नवीनतम Enrollments दिखाए जाते हैं।
+- जिन Courses में Published Chapters नहीं हैं, उनका progress N/A रहेगा।
+- यदि डेटा लोड न हो, तो Admin की संबंधित SELECT/RLS permissions और chapter-progress.sql setup जाँचें।
+
+इंस्टॉल:
+1. वर्तमान Website का Backup लें।
+2. ZIP Extract करें।
+3. Extract हुई Next_Level_Learning_Academy_Supabase फोल्डर की files को Hosting/GitHub project में replace करें।
+4. Admin Panel खोलकर Student Progress section जाँचें।
+
+इस Version में SQL Editor में कोई नया SQL चलाने की आवश्यकता नहीं है।

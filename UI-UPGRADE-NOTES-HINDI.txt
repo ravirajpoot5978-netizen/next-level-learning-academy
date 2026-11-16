@@ -1,0 +1,16 @@
+NEXT LEVEL LEARNING ACADEMY - UI UPGRADE v1
+
+Is update me visual design improve kiya gaya hai:
+1. Homepage: refined blue-violet theme, improved spacing, cards, buttons, focus states and mobile styling.
+2. Student Dashboard: cleaner layout, responsive statistic cards, improved course cards, language selector and quiz interface styling.
+3. Existing HTML structure, JavaScript logic, Supabase queries, authentication, quiz scoring, enrollment and SQL files ko change nahi kiya gaya.
+
+INSTALLATION:
+- ZIP extract karein.
+- Existing project ke css folder me style.css aur portal.css replace karein.
+- Ya poora updated folder hosting/GitHub repository me upload karein.
+- Is UI-only update ke liye Supabase SQL run karne ki zarurat nahi hai.
+
+NOTE:
+- Browser cache clear/refresh karein (mobile par hard refresh ya site data cache clear) agar purana design dikhe.
+- Pehle test/staging par login, language change, enrollment, chapter progress aur quiz submission check karein.

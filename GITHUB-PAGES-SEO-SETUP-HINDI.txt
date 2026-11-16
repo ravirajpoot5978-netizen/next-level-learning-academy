@@ -1,0 +1,29 @@
+NEXT LEVEL LEARNING ACADEMY — GITHUB PAGES SEO PACKAGE
+======================================================
+This package is based on Version 12 and includes the separate Typing Lab files
+plus GitHub Pages SEO files.
+
+EXPECTED GITHUB PAGES URL:
+https://ravirajpoot5978-netizen.github.io/next-level-learning-academy/
+
+UPLOAD:
+1. Extract this ZIP on your phone.
+2. Open the GitHub repository in Chrome (Desktop site may be easier).
+3. Add file > Upload files.
+4. Upload the CONTENTS of this extracted folder into the repository root.
+   Do NOT upload the enclosing folder itself.
+5. Commit changes to main.
+6. Repository Settings > Pages > Build and deployment:
+   Deploy from a branch > main > /(root) > Save.
+7. Wait until GitHub Pages displays the published URL.
+
+SEO:
+- sitemap.xml and robots.txt are configured for the expected GitHub Pages URL.
+- If GitHub Pages URL differs, change the URLs in both files and canonical tags.
+- Search Console submission should happen only after the public site is live.
+- Search engines may take time to crawl and index pages.
+
+SUPABASE:
+- js/supabase-config.js contains the public publishable key only.
+- Never add a Supabase secret/service_role key to public repository files.
+- Review Supabase RLS policies and test student/admin workflows before launch.

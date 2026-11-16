@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin-login.html
+Disallow: /login.html
+Disallow: /student-dashboard.html
+Disallow: /verify-certificate.html
+
+Sitemap: https://ravirajpoot5978-netizen.github.io/next-level-learning-academy/sitemap.xml

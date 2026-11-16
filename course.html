@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Learn chapter by chapter at Next Level Learning Academy.">
+  <title>Course Learning | Next Level Learning Academy</title>
+  <link rel="stylesheet" href="css/portal.css">
+  <link rel="stylesheet" href="css/course-learning.css">
+</head>
+<body>
+  <main class="portal learning-portal">
+    <section class="dash learning-shell">
+      <header class="topbar"><a class="back-link" href="student-dashboard.html">← Dashboard</a><div class="brand">NEXT LEVEL LEARNING ACADEMY</div><a href="#" id="logout">Logout</a></header>
+      <div class="learning-hero">
+        <span class="learning-kicker">YOUR LEARNING SPACE</span>
+        <h1 id="courseTitle">Course loading…</h1>
+        <p id="courseDescription">आपकी learning journey यहाँ से शुरू होती है।</p>
+        <div class="learning-meta"><span id="courseSubject">Subject</span><span id="courseLevel">Level</span><span id="courseLanguage">Language</span></div>
+      </div>
+      <section class="learning-overview" aria-label="Course progress">
+        <div><strong id="completedCount">0</strong><span>Completed</span></div>
+        <div><strong id="chapterTotal">0</strong><span>Total Chapters</span></div>
+        <div class="learning-progress"><div class="progress-track"><span id="progressBar"></span></div><small id="progressLabel">0% course progress</small></div>
+      </section>
+      <div id="learningStatus" class="status" role="status" aria-live="polite"></div>
+      <section class="course-content-section">
+        <div class="learning-section-head"><div><span class="learning-kicker">COURSE CONTENT</span><h2>Chapters & Study Material</h2><p class="muted">हर chapter के notes और video lessons एक ही जगह पर।</p></div></div>
+        <div id="courseContent"><p class="muted">Course content लोड हो रहा है…</p></div>
+      </section>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/course.js"></script>
+<script src="js/navigation.js"></script></body>
+</html>

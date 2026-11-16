@@ -1,0 +1,29 @@
+NEXT LEVEL LEARNING ACADEMY — VERSION 9
+
+ADMIN CONTENT LIBRARY UPDATE
+
+1. Admin Panel में Learning Lab Content Library को बेहतर बनाया गया है।
+2. Lesson, Quiz, Typing, Coding और Game content के लिए अलग JSON starter templates उपलब्ध हैं।
+3. Content को Subject और Type के अनुसार बनाया जा सकता है।
+4. पहले से सेव Content को Edit करके उसी record में Update कर सकते हैं।
+5. Publish / Unpublish और Delete विकल्प पहले की तरह उपलब्ध हैं।
+6. Saved Content को Title या Subject से Search और Type से Filter कर सकते हैं।
+7. Edit Cancel करने का विकल्प जोड़ा गया है।
+8. JSON गलत होने पर Save रोककर error message दिखाया जाता है।
+9. Typing Practice में Personal Best पढ़ने की समस्या ठीक की गई है; अब browser-local saved best score सही तरीके से पढ़ा जाएगा।
+
+DATABASE / SQL
+- नया SQL आवश्यक नहीं है।
+- यह पहले से मौजूद learning_lab_items table और learning-lab-content.sql policy का उपयोग करता है।
+- यदि Learning Lab Content Manager पहली बार उपयोग कर रहे हैं, तो Supabase SQL Editor में supabase/learning-lab-content.sql पहले चलाएँ।
+- Admin role verification पहले की तरह Supabase profile से होती है।
+
+महत्वपूर्ण सीमा:
+- इस Content Library में Quiz/Typing/Coding/Game JSON records को सुरक्षित रूप से manage किया जा सकता है। वर्तमान Student-side custom content renderer मुख्य रूप से published Lesson records दिखाता है। अन्य प्रकारों के पूर्ण student interactive experiences अलग अगले विकास चरण में जोड़े जाने होंगे।
+
+INSTALLATION
+1. मौजूदा वेबसाइट का backup लें।
+2. Version 9 ZIP Extract करें।
+3. Project files को hosting/GitHub project में replace करें।
+4. Admin login करके Content Library खोलें।
+5. किसी Content को Edit, Template लगाकर नया बनाना, Search और Filter करके जाँचें।

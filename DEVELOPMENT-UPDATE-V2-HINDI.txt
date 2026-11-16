@@ -1,0 +1,25 @@
+NEXT LEVEL LEARNING ACADEMY — DEVELOPMENT UPDATE v2
+
+What changed
+1. Admin Panel visual refresh: responsive hero, quick section navigation, cleaner forms, cards and report table styling. Existing element IDs and admin.js behavior were preserved.
+2. New Course Learning Page: course.html + js/course.js + css/course-learning.css.
+3. Enrolled course cards now include an Open Course link.
+4. Course page checks signed-in student and enrollment before showing published content.
+5. Displays published chapters, PDF study materials and video links from existing Supabase tables. YouTube links are embedded using youtube-nocookie; other video URLs open externally.
+6. Students can mark chapters complete or undo completion using the existing chapter_progress table.
+
+Database / SQL
+No new SQL is required for this update. It uses the existing courses, course_enrollments, course_chapters, study_materials, videos and chapter_progress tables. The existing chapter-progress.sql migration must already have been run for chapter completion to work.
+
+Install
+1. Back up your current website folder.
+2. Extract this ZIP and replace the matching project files, or deploy the full folder to your existing hosting.
+3. Keep your current js/supabase-config.js values unchanged.
+4. Sign in as a student, enroll in a published course, open it from My Courses, and test one chapter completion.
+5. Sign in as admin and check the Admin Panel quick navigation, course/chapter forms, PDF/video upload, quiz creation and quiz reports.
+
+Verification
+- All project JavaScript files passed Node.js syntax checks.
+- HTML-to-JavaScript direct ID references were checked; dynamically generated quiz form/result elements are expected.
+- ZIP archive integrity was checked after packaging.
+- A live Supabase/browser test was not possible here. If Supabase RLS blocks materials/videos or progress, share the exact browser error before changing policies.

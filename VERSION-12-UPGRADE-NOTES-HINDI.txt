@@ -1,0 +1,19 @@
+VERSION 12 UPDATE — COURSE CERTIFICATE SYSTEM
+------------------------------------------------
+- Student Dashboard: My Certificates, course completion check and request.
+- Admin Panel: Approve & Issue, Revoke, CSV report.
+- Unique Certificate ID and PDF with QR verification link.
+- Public verification shows certificate ID, student name, course and status only.
+INSTALLATION:
+1. Version 11 files का backup लें और Version 12 project files replace करें.
+2. Supabase SQL Editor में supabase/course-certificates-v12.sql पूरा Run करें.
+3. Student को enrolled होना चाहिए और Course के सभी Published Chapters पूरे होने चाहिए.
+4. Student Dashboard > My Certificates से request करें.
+5. Admin Panel > Certificates से Approve & Issue करें.
+6. Student PDF डाउनलोड कर सकता है; QR scan करके public verification करें.
+REQUIREMENTS / LIMITATIONS:
+- Existing profiles, courses, course_enrollments, course_chapters, chapter_progress tables required.
+- PDF/QR libraries CDN से लोड होती हैं; PDF बनाने के लिए Internet चाहिए.
+- Signature line visual placeholder है; public launch से पहले authorized signature और certificate policy तय करें.
+- Live Supabase SQL/RLS and real account workflow must be tested in the user's project.
+- Frontend में केवल publishable key रखें; service_role/secret key कभी न जोड़ें.
