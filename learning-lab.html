@@ -1,1 +1,80 @@
-<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="सभी learning tools और subjects के अलग-अलग pages."><title>Learning Lab | Next Level Learning Academy</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/learning-lab.css"></head><body class="lab-body"><main class="lab-shell"><header class="lab-top"><a class="lab-brand" href="index.html">✦ NEXT LEVEL LEARNING ACADEMY</a><a href="student-dashboard.html">Student Dashboard ↗</a></header><nav class="lab-nav"><a href="learning-lab.html">Learning Lab Home</a><a href="typing-practice.html">Typing</a><a href="coding-practice.html">Coding</a><a href="quiz-practice.html">Quiz</a><a href="learning-games.html">Games</a><a href="study-assistant.html">Study Assistant</a></nav><section class="lab-hero"><span class="lab-kicker">NEXT LEVEL LEARNING ACADEMY</span><h1>Learning Lab</h1><p>सभी learning tools और subjects के अलग-अलग pages.</p></section><section class="lab-section"><h2>🚀 Practice & Learning Tools</h2><p class="lab-muted">जिस skill की practice करनी है, उसका अलग page खोलें।</p><div class="lab-grid"><a class="lab-card lab-link-card" href="typing.html"><div class="emoji">⌨️</div><h3>Typing Practice ↗</h3><p>English, Hindi, Remington Gail, InScript, typing tests और 8 games</p><span class="card-action">Open section</span></a><a class="lab-card lab-link-card" href="coding-practice.html"><div class="emoji">💻</div><h3>Coding Practice ↗</h3><p>VS Code Style Editor, Online Playground, HTML, CSS, JavaScript, Python और C</p><span class="card-action">Open section</span></a><a class="lab-card lab-link-card" href="quiz-practice.html"><div class="emoji">🧠</div><h3>Quiz Practice ↗</h3><p>Subject-wise MCQ और instant explanations</p><span class="card-action">Open section</span></a><a class="lab-card lab-link-card" href="learning-games.html"><div class="emoji">🎮</div><h3>Learning Games ↗</h3><p>Memory Match और learning games</p><span class="card-action">Open section</span></a><a class="lab-card lab-link-card" href="study-assistant.html"><div class="emoji">🤖</div><h3>Study Assistant ↗</h3><p>Basic topic helper और explanations</p><span class="card-action">Open section</span></a></div></section><section class="lab-section" id="subjects"><h2>📚 Subject-wise Learning</h2><p class="lab-muted">हर विषय का अपना अलग learning page है।</p><div class="lab-grid"><a class="lab-card lab-link-card" href="subject-computer.html"><div class="emoji">⌘</div><h3>Computer ↗</h3><p>Computer fundamentals, hardware, software और practical lessons.</p><span class="card-action">Open subject</span></a><a class="lab-card lab-link-card" href="subject-mathematics.html"><div class="emoji">➗</div><h3>Mathematics ↗</h3><p>Number system, percentage, algebra और calculations.</p><span class="card-action">Open subject</span></a><a class="lab-card lab-link-card" href="subject-reasoning.html"><div class="emoji">🧩</div><h3>Reasoning ↗</h3><p>Series, analogy, classification और logical reasoning.</p><span class="card-action">Open subject</span></a><a class="lab-card lab-link-card" href="subject-science.html"><div class="emoji">🔬</div><h3>Science ↗</h3><p>Physics, Chemistry, Biology और daily science.</p><span class="card-action">Open subject</span></a><a class="lab-card lab-link-card" href="subject-english.html"><div class="emoji">🔤</div><h3>English ↗</h3><p>Grammar, vocabulary, reading और writing.</p><span class="card-action">Open subject</span></a><a class="lab-card lab-link-card" href="subject-hindi.html"><div class="emoji">अ</div><h3>Hindi ↗</h3><p>व्याकरण, शब्द-भेद, लेखन और पठन.</p><span class="card-action">Open subject</span></a><a class="lab-card lab-link-card" href="subject-gk.html"><div class="emoji">🌍</div><h3>GK / General Studies ↗</h3><p>History, geography, polity और general awareness.</p><span class="card-action">Open subject</span></a><a class="lab-card lab-link-card" href="subject-school.html"><div class="emoji">🎒</div><h3>School Subjects ↗</h3><p>Class 6–12 के concepts और chapter-wise practice.</p><span class="card-action">Open subject</span></a><a class="lab-card lab-link-card" href="subject-programming.html"><div class="emoji">&lt;/&gt;</div><h3>Programming ↗</h3><p>HTML, CSS, JavaScript और Python concepts.</p><span class="card-action">Open subject</span></a></div></section><footer class="lab-footer">© Next Level Learning Academy · Learn Today. Lead Tomorrow.</footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/supabase-config.js"></script><script src="js/supabase-client.js"></script><script src="js/learning-lab.js"></script></main><script src="js/navigation.js"></script></body></html>
+
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Computer Learning, Typing Games and Coding Lab">
+<title>Learning Lab | Next Level Learning Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/learning-lab.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f5f8ff;color:#172554;font-family:Inter,Hind,sans-serif}
+.lab-shell{max-width:1150px;margin:auto;padding:20px}
+.lab-top,.lab-nav{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.lab-brand{font-weight:800;color:#1746a2;text-decoration:none}
+.lab-top a:last-child,.lab-nav a{color:#2452a4;text-decoration:none;font-weight:600}
+.lab-nav{background:white;padding:14px;border-radius:14px;margin-top:20px;box-shadow:0 4px 18px #183b7210}
+.lab-hero{padding:55px 10px 35px;text-align:center}
+.lab-kicker{color:#2563eb;font-weight:800;letter-spacing:2px;font-size:12px}
+.lab-hero h1{font-size:clamp(32px,6vw,48px);margin:12px 0}
+.lab-hero p,.lab-muted{color:#64748b;line-height:1.7}
+.lab-section h2{font-size:25px}
+.lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:22px}
+.lab-card{display:block;background:white;padding:25px;border:1px solid #e2eaff;border-radius:18px;text-decoration:none;color:#172554;box-shadow:0 8px 25px #173b7510;transition:.2s}
+.lab-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px #173b7520}
+.emoji{font-size:40px}
+.lab-card h3{font-size:20px;margin:15px 0 8px}
+.lab-card p{color:#64748b;line-height:1.7;font-size:14px}
+.card-action{display:inline-block;margin-top:12px;background:#1d4ed8;color:white;padding:11px 17px;border-radius:9px;font-size:13px;font-weight:700}
+.lab-footer{text-align:center;color:#64748b;padding:35px 10px;font-size:13px}
+@media(max-width:600px){.lab-shell{padding:14px}.lab-nav{justify-content:center}.lab-nav a{font-size:13px}.lab-hero{padding-top:38px}}
+</style>
+</head>
+<body>
+<main class="lab-shell">
+<header class="lab-top">
+<a class="lab-brand" href="index.html">✦ NEXT LEVEL LEARNING ACADEMY</a>
+<a href="student-dashboard.html">Student Dashboard ↗</a>
+</header>
+<nav class="lab-nav">
+<a href="learning-lab.html">Learning Lab Home</a>
+<a href="subject-computer.html">Computer</a>
+<a href="typing.html">Typing Games</a>
+<a href="coding-practice.html">Coding Lab</a>
+</nav>
+<section class="lab-hero">
+<span class="lab-kicker">NEXT LEVEL LEARNING ACADEMY</span>
+<h1>Learning Lab</h1>
+<p>सीखें, अभ्यास करें और अपनी skills को बेहतर बनाएं।</p>
+</section>
+<section class="lab-section">
+<h2>🚀 Explore Learning</h2>
+<p class="lab-muted">अपनी पसंद का learning area चुनें।</p>
+<div class="lab-grid">
+<a class="lab-card" href="subject-computer.html">
+<div class="emoji">🖥️</div>
+<h3>Computer Learning ↗</h3>
+<p>Computer fundamentals, hardware, software, Windows, MS Office और practical lessons सीखें।</p>
+<span class="card-action">Open Computer</span>
+</a>
+<a class="lab-card" href="typing.html">
+<div class="emoji">⌨️</div>
+<h3>Typing Games ↗</h3>
+<p>Typing practice, speed tests और 12 fun typing games के साथ अभ्यास करें।</p>
+<span class="card-action">Open Typing Arcade</span>
+</a>
+<a class="lab-card" href="coding-practice.html">
+<div class="emoji">💻</div>
+<h3>Coding Lab ↗</h3>
+<p>VS Code Style Editor और Online Playground में HTML, CSS और JavaScript सीखें।</p>
+<span class="card-action">Open Coding Lab</span>
+</a>
+</div>
+</section>
+<footer class="lab-footer">© Next Level Learning Academy · Learn Today. Lead Tomorrow.</footer>
+</main>
+</body>
+</html>
