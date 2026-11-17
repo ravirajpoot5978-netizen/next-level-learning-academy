@@ -192,3 +192,25 @@ body{background:#f5f8ff;color:#17233d}
 @keyframes arcadePulse{to{transform:scale(1.08)}}
 @keyframes gameHit{50%{transform:scale(1.015);filter:brightness(1.08)}}
 @media(prefers-reduced-motion:reduce){.rain-word,.balloon,.treasure-box,.streak-game,.sentence-game,.number-game,.builder-game,.accuracy-game{animation:none!important}}
+
+
+/* Visible playable game board: the target is part of the game, not just a text prompt. */
+.arcade-scene{height:190px!important;max-width:100%!important;margin:10px auto 14px!important;border:2px solid #c9d9f4!important;background:linear-gradient(180deg,#eaf3ff,#fff)!important}
+.arcade-stage[data-game] .arcade-target{display:none!important}
+.active-game-target{position:absolute;z-index:5;min-width:72px;max-width:82%;padding:12px 18px;border-radius:14px;background:#fff;border:2px solid #3972d4;color:#1748b8;font-size:clamp(20px,5vw,30px);font-weight:900;box-shadow:0 7px 0 #c5d7f2,0 12px 22px #193e7922;text-align:center;overflow-wrap:anywhere}
+.active-target-wordrain{top:10px;left:calc(50% - 48px);animation:activeRainDrop 4.8s linear forwards}
+.active-target-balloon{border-radius:50% 50% 46% 46%;background:radial-gradient(circle at 30% 20%,#fff,#bcd4ff 35%,#5c83dc 100%);color:#143a86;border:2px solid #4e75c6;box-shadow:0 8px 0 #355cae;animation:activeBalloonFloat 1.5s ease-in-out infinite}
+.active-target-race{left:10%;top:56%;transform:translateY(-50%);border-radius:10px;animation:activeRaceMove .8s ease-in-out infinite alternate}
+.active-target-space{left:12%;bottom:12px;background:#fff;color:#5135a6;border-color:#9a82e0;animation:activeRocketMove 1.2s ease-in-out infinite alternate}
+.active-target-treasure{background:#fff7e8;color:#89540d;border-color:#d6a34a;animation:activeTreasurePulse 1s ease-in-out infinite alternate}
+.active-target-code{background:#172b54;color:#bde2ff;border-color:#5278bd;letter-spacing:2px}
+.active-target-letters{min-width:70px;min-height:70px;display:grid;place-items:center;font-size:38px;border-radius:16px}
+.active-target-streak,.active-target-sentence,.active-target-numbers,.active-target-builder,.active-target-accuracy{background:#fff;color:#1748b8}
+.arcade-stage.game-hit .active-game-target{animation:activeHit .35s ease}
+@keyframes activeRainDrop{0%{transform:translateY(0);opacity:1}85%{opacity:1}100%{transform:translateY(120px);opacity:.3}}
+@keyframes activeBalloonFloat{50%{transform:translateY(-15px) rotate(4deg)}}
+@keyframes activeRaceMove{to{left:38%}}
+@keyframes activeRocketMove{to{left:48%}}
+@keyframes activeTreasurePulse{to{transform:scale(1.12)}}
+@keyframes activeHit{50%{transform:scale(1.25);opacity:.35}}
+@media(max-width:520px){.arcade-scene{height:170px!important}.active-game-target{font-size:21px;padding:10px 13px}}
