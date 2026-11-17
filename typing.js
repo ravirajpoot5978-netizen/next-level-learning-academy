@@ -122,6 +122,11 @@
       accuracy: '<div class="accuracy-game">🛡️ <b>SHIELDS ' + arcadeLives + '/3</b> 🛡️</div>'
     };
     scene.innerHTML = scenes[arcadeGame] || '';
+    const activeTarget = document.createElement('div');
+    activeTarget.className = 'active-game-target active-target-' + arcadeGame;
+    activeTarget.textContent = arcadeTarget;
+    activeTarget.setAttribute('aria-label', 'Type this target: ' + arcadeTarget);
+    scene.appendChild(activeTarget);
     $('arcadeStage').style.setProperty('--race-progress', Math.min(100, arcadeDone / arcadeGames[arcadeGame].goal * 100) + '%');
     $('arcadeStage').dataset.game = arcadeGame;
     if (arcadeGame === 'wordrain') {
