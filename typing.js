@@ -59,13 +59,29 @@
   function endArcade(reason='Game complete!'){if(arcadeTimer){clearInterval(arcadeTimer);arcadeTimer=null;}$('arcadeInput').disabled=true;$('arcadeSubmit').disabled=true;$('arcadeResult').classList.remove('hidden');$('arcadeSummary').textContent=`${reason} आपने ${arcadeDone} challenges पूरे किए और ${arcadeScore} points बनाए। Best streak: ${arcadeStreak}।`;if(arcadeDone){const h=getHistory();h.unshift({date:new Date().toISOString(),language:'english',level:'Arcade',mode:arcadeGames[arcadeGame].title,wpm:Math.round(arcadeDone/Math.max(1,(Date.now()-arcadeStartedAt)/60000)),accuracy:Math.round(arcadeDone/Math.max(1,arcadeDone+arcadeMistakes)*100)});saveHistory(h);renderHistory();renderStats();}}
   function openArcade(id){if(!arcadeGames[id])return;arcadeGame=id;$('gameModal').classList.add('open');$('gameModal').setAttribute('aria-hidden','false');document.body.classList.add('game-open');startArcade();}
   function closeArcade(){if(arcadeTimer){clearInterval(arcadeTimer);arcadeTimer=null;}$('gameModal').classList.remove('open');$('gameModal').setAttribute('aria-hidden','true');document.body.classList.remove('game-open');}
-  const requestedGame = new URLSearchParams(window.location.hash.slice(1)).get('play');
-  if (requestedGame && arcadeGames[requestedGame]) {
+  function launchRequestedGame() {
+    const rawHash = window.location.hash.startsWith('#') ? window.location.hash.slice(1) : '';
+    const params = new URLSearchParams(rawHash);
+    const id = params.get('play');
+    if (!id || !Object.prototype.hasOwnProperty.call(arcadeGames, id)) return;
     const gamesTab = document.querySelector('.tab[data-tab="games"]');
-    if (gamesTab) gamesTab.click();
-    setTimeout(() => openArcade(requestedGame), 180);
+    if (gamesTab && !gamesTab.classList.contains('active')) gamesTab.click();
+    const message = $('gameMessage');
+    if (message) message.textContent = arcadeGames[id].title + ' selected — अपना best score बनाइए!';
+    openArcade(id);
   }
-  document.querySelectorAll('.game-launch').forEach(btn=>btn.addEventListener('click',()=>{const id=btn.dataset.game;$('gameMessage').textContent=`${arcadeGames[id].title} selected — अपना best score बनाइए!`;openArcade(id);}));
+  document.addEventListener('click', (event) => {
+    const btn = event.target.closest('.game-launch');
+    if (!btn) return;
+    event.preventDefault();
+    const id = btn.dataset.game;
+    if (!Object.prototype.hasOwnProperty.call(arcadeGames, id)) return;
+    const message = $('gameMessage');
+    if (message) message.textContent = arcadeGames[id].title + ' selected — अपना best score बनाइए!';
+    openArcade(id);
+  });
+  window.addEventListener('hashchange', launchRequestedGame);
+  if (window.location.hash.includes('play=')) launchRequestedGame();
   $('arcadeLanguage').addEventListener('change',()=>{if(arcadeTimer)startArcade();});
   $('arcadeSubmit').addEventListener('click',submitArcade);$('arcadeInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submitArcade();}});$('closeGame').addEventListener('click',closeArcade);$('restartGame').addEventListener('click',startArcade);$('playAgain').addEventListener('click',startArcade);$('gameModal').addEventListener('click',e=>{if(e.target===$('gameModal'))closeArcade();});
   $('clearHistory').addEventListener('click',()=>{if(confirm('क्या आप इस device की पूरी typing history हटाना चाहते हैं?')){saveHistory([]);renderHistory();renderStats();}});
