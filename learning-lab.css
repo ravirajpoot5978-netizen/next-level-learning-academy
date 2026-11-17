@@ -46,3 +46,20 @@
 #typingTarget{animation:wordDrop .25s ease-out}
 @media(max-width:700px){.quiz-control-top{align-items:flex-start}.quiz-question-card h3{font-size:18px}.quiz-actions>*{min-width:0}.quiz-result-hero{padding:18px}}
 .custom-content-section{margin-top:22px}.custom-activity{margin:14px 0}.custom-quiz-options{display:grid;gap:8px;margin:12px 0}.custom-task{display:flex;gap:9px;align-items:center;padding:9px 0;border-bottom:1px solid #e8eef6}.custom-task input{width:18px;height:18px}.custom-activity .typing-target{margin:12px 0}.custom-activity textarea{font-family:ui-monospace,monospace}.custom-activity .quiz-review-item{margin:10px 0}
+
+/* Unified Next Level Academy visual refresh */
+.lab-body{background:radial-gradient(circle at 8% 0%,#e8f1ff 0,transparent 30%),#f5f8fd!important;color:#17243e}
+.lab-shell{width:min(1160px,92%)!important}
+.lab-top{padding:12px 0!important;border-bottom:1px solid #e1e9f5!important}
+.lab-brand{color:#1748b8!important;font-weight:900!important}
+.lab-nav{border:1px solid #e2eaf5!important;border-radius:14px!important;box-shadow:0 8px 25px #183b720c!important;padding:10px!important}
+.lab-nav a{border-radius:9px!important;padding:10px 12px!important}
+.hub-hero,.hub-topic-hero{border-radius:25px!important;box-shadow:0 18px 45px #1748b814!important}
+.hub-hero{background:linear-gradient(120deg,#123d99,#3476df)!important;color:#fff!important}
+.hub-hero p,.hub-topic-hero p{line-height:1.85!important}
+.hub-section{border:1px solid #e3eaf4!important;border-radius:21px!important;background:#fff!important;box-shadow:0 10px 32px #173d7908!important;padding:25px!important}
+.hub-chapter-card,.hub-course-card,.hub-tool-card{border-radius:17px!important;transition:transform .18s,box-shadow .18s!important}
+.hub-chapter-card:hover,.hub-course-card:hover,.hub-tool-card:hover{transform:translateY(-3px)!important;box-shadow:0 14px 30px #173d7914!important}
+.hub-search-wrap input{border-radius:11px!important}
+.lab-btn{border-radius:11px!important;background:linear-gradient(135deg,#1748b8,#3978ed)!important}
+@media(max-width:700px){.hub-section{padding:17px!important}.lab-nav{justify-content:flex-start!important;overflow:auto;flex-wrap:nowrap!important}.lab-nav a{white-space:nowrap}}
