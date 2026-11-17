@@ -98,6 +98,70 @@
     if (message) message.textContent = arcadeGames[id].title + ' selected — अपना best score बनाइए!';
     openArcade(id);
   });
+
+  // Game-specific arcade mechanics (not just a shared typing prompt).
+  let wordRainTimeout = null;
+  const baseNextArcadeTarget = nextArcadeTarget;
+  nextArcadeTarget = function () {
+    if (wordRainTimeout) { clearTimeout(wordRainTimeout); wordRainTimeout = null; }
+    baseNextArcadeTarget();
+    const scene = $('arcadeScene');
+    if (!scene) return;
+    const scenes = {
+      wordrain: '<div class="rain-game"><span class="rain-cloud">☁️</span><span class="rain-word rain-one">WORD</span><span class="rain-word rain-two">TYPE</span><span class="rain-word rain-three">FAST</span><span class="rain-basket">🧺</span></div>',
+      balloon: '<div class="balloon-game"><span class="balloon b1">🎈</span><span class="balloon b2">🎈</span><span class="balloon b3">🎈</span><span class="balloon b4">🎈</span></div>',
+      race: '<div class="race-game"><span class="race-track-line"></span><span class="race-car">🏎️</span><span class="race-flag">🏁</span></div>',
+      space: '<div class="space-game"><span class="space-stars">✦　·　✧　·　✦</span><span class="space-planet">🪐</span><span class="space-rocket">🚀</span></div>',
+      treasure: '<div class="treasure-game"><span>🗺️</span><span class="treasure-path">━━━━━━➤</span><span class="treasure-box">🧰</span></div>',
+      code: '<div class="code-game"><span>▣ 01</span><span>▣ 02</span><span>▣ 03</span><b>🔐</b></div>',
+      letters: '<div class="letter-game"><span>A</span><span>S</span><span>D</span><span>F</span><span>J</span></div>',
+      streak: '<div class="streak-game">🔥 <b>COMBO ×' + Math.max(1, arcadeStreak + 1) + '</b> 🔥</div>',
+      sentence: '<div class="sentence-game">⚡ <b>SPRINT CHALLENGE</b> ⚡</div>',
+      numbers: '<div class="number-game">🔢 <b>NUMBER LOCK</b> 🔢</div>',
+      builder: '<div class="builder-game">🧩 <b>WORD PUZZLE</b> 🧩</div>',
+      accuracy: '<div class="accuracy-game">🛡️ <b>SHIELDS ' + arcadeLives + '/3</b> 🛡️</div>'
+    };
+    scene.innerHTML = scenes[arcadeGame] || '';
+    $('arcadeStage').style.setProperty('--race-progress', Math.min(100, arcadeDone / arcadeGames[arcadeGame].goal * 100) + '%');
+    $('arcadeStage').dataset.game = arcadeGame;
+    if (arcadeGame === 'wordrain') {
+      const expected = arcadeTarget;
+      wordRainTimeout = setTimeout(() => {
+        if (arcadeGame !== 'wordrain' || arcadeTarget !== expected || $('arcadeInput').disabled) return;
+        arcadeLives--;
+        arcadeStreak = 0;
+        $('arcadeFeedback').textContent = 'शब्द टोकरी तक पहुँच गया! एक मौका कम हुआ। ❤️ ' + arcadeLives + ' lives बाकी';
+        updateArcadeStats();
+        if (arcadeLives <= 0) { endArcade('बहुत से शब्द छूट गए!'); return; }
+        nextArcadeTarget();
+      }, 5200);
+    }
+  };
+  const baseSubmitArcade = submitArcade;
+  submitArcade = function () {
+    const before = arcadeDone;
+    baseSubmitArcade();
+    if (arcadeDone > before) {
+      const stage = $('arcadeStage');
+      stage.classList.remove('game-hit');
+      void stage.offsetWidth;
+      stage.classList.add('game-hit');
+      $('arcadeStage').style.setProperty('--race-progress', Math.min(100, arcadeDone / arcadeGames[arcadeGame].goal * 100) + '%');
+      if (arcadeGame === 'wordrain') $('arcadeFeedback').textContent = '🌧️ Catch! शब्द टोकरी में आ गया!';
+      if (arcadeGame === 'balloon') $('arcadeFeedback').textContent = '🎈 POP! Balloon फूट गया!';
+      if (arcadeGame === 'race') $('arcadeFeedback').textContent = '🏎️ आपकी car finish line की ओर बढ़ी!';
+      if (arcadeGame === 'space') $('arcadeFeedback').textContent = '🚀 Mission आगे बढ़ा — अगला level!';
+      if (arcadeGame === 'treasure') $('arcadeFeedback').textContent = '💎 सही रास्ता! खजाना करीब है!';
+      if (arcadeGame === 'code') $('arcadeFeedback').textContent = '🔓 Code accepted! अगला lock खोलें!';
+      if (arcadeGame === 'letters') $('arcadeFeedback').textContent = '🦋 सही अक्षर पकड़ा!';
+      if (arcadeGame === 'streak') $('arcadeFeedback').textContent = '🔥 Combo ×' + arcadeStreak + ' — bonus points!';
+      if (arcadeGame === 'numbers') $('arcadeFeedback').textContent = '🔢 Number lock unlocked!';
+      if (arcadeGame === 'builder') $('arcadeFeedback').textContent = '🧩 Puzzle solved!';
+      if (arcadeGame === 'accuracy') $('arcadeFeedback').textContent = '🛡️ Shield सुरक्षित है!';
+      if (arcadeGame === 'sentence') $('arcadeFeedback').textContent = '⚡ Sprint complete!';
+    }
+  };
+
   window.addEventListener('hashchange', launchRequestedGame);
   if (window.location.hash.includes('play=')) launchRequestedGame();
   $('arcadeLanguage').addEventListener('change',()=>{if(arcadeTimer)startArcade();});
