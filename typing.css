@@ -93,3 +93,50 @@ body{background:linear-gradient(180deg,#edf4ff 0,#f8faff 360px,#f5f8ff 100%)!imp
 .setup-grid label{color:#49617f!important}.setup-grid select,.language-wrap select{background:#fff!important;color:#172b4d!important;border-color:#dce6f5!important}
 .history-wrap{background:#fff!important;border-color:#dce6f5!important}
 @media(max-width:520px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}.game-card{min-height:0!important;padding:15px 12px!important}.game-card p{min-height:76px!important}.game-launch{width:100%!important}}
+
+
+/* Next Level Academy light-blue visual refresh + robust arcade overlay */
+:root{--bg:#f5f8ff;--surface:#ffffff;--surface2:#eef4ff;--line:#dce6f5;--text:#17233d;--muted:#64748b;--blue:#2457c5;--cyan:#1d9b91;--purple:#7656c9;--orange:#c77b2b;--radius:20px}
+body{background:#f5f8ff;color:#17233d}
+.topbar{background:#ffffffed;border-bottom:1px solid #e4eaf4}
+.brand{color:#17233d}
+.brand-mark{background:linear-gradient(135deg,#1748b8,#4384fa)}
+.back-link,.footer a{color:#2457c5}
+.hero-center,.key{background:linear-gradient(145deg,#ffffff,#eaf1ff);color:#1748b8;border-color:#dce6f5;box-shadow:0 12px 30px #1748b81a}
+.hero-center b{color:#2457c5}
+.orbit{border-color:#2457c52b}
+.stats article,.result-grid article,.passage-card,.guide-grid article,.game-card{background:#fff;border-color:#dce6f5;box-shadow:0 8px 24px #1748b80a}
+.stats span,.result-grid span{color:#64748b}
+.stats strong,.result-grid strong{color:#17233d}
+.tab,.subtab{color:#64748b}
+.tab.active,.subtab.active{background:#eaf1ff;border-color:#c8d8f5;color:#1748b8}
+.panel-heading h2,.guide-grid h3,.game-card h3{color:#17233d}
+.panel-heading p,.game-card p,.guide-grid p{color:#64748b}
+.live-badge,.game-count{color:#147d75;border-color:#b9e5df;background:#f0fbf9}
+.setup-grid label{color:#40516e}
+.setup-grid select,.language-wrap select{background:#fff;color:#17233d;border-color:#dce6f5}
+.passage-card{background:#fff}
+.passage-text{background:#f5f8ff;color:#263653}
+.typing-wrap{background:#fbfdff;border-color:#c9d8f0}
+.typing-wrap textarea{color:#17233d}
+.input-hint{color:#64748b}
+.quiet-btn{background:#f5f8ff;color:#344563;border-color:#dce6f5}
+.notice{background:#eef4ff;border-color:#dce6f5;color:#52627c}
+.game-card{background:#fff}
+.game-modal{display:none!important;position:fixed!important;inset:0!important;z-index:99999!important;background:rgba(15,31,60,.62)!important;backdrop-filter:blur(8px);padding:12px;align-items:center;justify-content:center}
+.game-modal.open{display:flex!important}
+.game-window{background:#fff!important;color:#17233d!important;border:1px solid #dce6f5!important;box-shadow:0 24px 80px #102a5540!important;max-height:92dvh!important}
+.game-window-top h2{color:#17233d}
+.arcade-stats div{background:#f3f7ff;border-color:#dce6f5}
+.arcade-stats small{color:#64748b}
+.arcade-stats strong{color:#17233d}
+.arcade-stage{background:#f5f8ff;border-color:#dce6f5}
+.arcade-stage>p,.arcade-instruction{color:#52627c}
+.arcade-target{color:#1748b8;text-shadow:none}
+.arcade-input-row input{background:#fff;color:#17233d;border-color:#c9d8f0}
+.arcade-feedback,.arcade-bottom{color:#52627c}
+.arcade-language-row label{color:#52627c}
+.arcade-language-row select{background:#fff;color:#17233d;border-color:#dce6f5}
+.game-open{overflow:hidden}
+@media(max-width:760px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.game-modal{padding:8px}.game-window{padding:16px;border-radius:18px}}
+@media(max-width:420px){.game-grid{grid-template-columns:1fr}}
