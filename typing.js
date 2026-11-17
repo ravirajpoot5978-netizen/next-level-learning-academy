@@ -59,6 +59,12 @@
   function endArcade(reason='Game complete!'){if(arcadeTimer){clearInterval(arcadeTimer);arcadeTimer=null;}$('arcadeInput').disabled=true;$('arcadeSubmit').disabled=true;$('arcadeResult').classList.remove('hidden');$('arcadeSummary').textContent=`${reason} आपने ${arcadeDone} challenges पूरे किए और ${arcadeScore} points बनाए। Best streak: ${arcadeStreak}।`;if(arcadeDone){const h=getHistory();h.unshift({date:new Date().toISOString(),language:'english',level:'Arcade',mode:arcadeGames[arcadeGame].title,wpm:Math.round(arcadeDone/Math.max(1,(Date.now()-arcadeStartedAt)/60000)),accuracy:Math.round(arcadeDone/Math.max(1,arcadeDone+arcadeMistakes)*100)});saveHistory(h);renderHistory();renderStats();}}
   function openArcade(id){if(!arcadeGames[id])return;arcadeGame=id;$('gameModal').classList.add('open');$('gameModal').setAttribute('aria-hidden','false');document.body.classList.add('game-open');startArcade();}
   function closeArcade(){if(arcadeTimer){clearInterval(arcadeTimer);arcadeTimer=null;}$('gameModal').classList.remove('open');$('gameModal').setAttribute('aria-hidden','true');document.body.classList.remove('game-open');}
+  const requestedGame = new URLSearchParams(window.location.hash.slice(1)).get('play');
+  if (requestedGame && arcadeGames[requestedGame]) {
+    const gamesTab = document.querySelector('.tab[data-tab="games"]');
+    if (gamesTab) gamesTab.click();
+    setTimeout(() => openArcade(requestedGame), 180);
+  }
   document.querySelectorAll('.game-launch').forEach(btn=>btn.addEventListener('click',()=>{const id=btn.dataset.game;$('gameMessage').textContent=`${arcadeGames[id].title} selected — अपना best score बनाइए!`;openArcade(id);}));
   $('arcadeLanguage').addEventListener('change',()=>{if(arcadeTimer)startArcade();});
   $('arcadeSubmit').addEventListener('click',submitArcade);$('arcadeInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submitArcade();}});$('closeGame').addEventListener('click',closeArcade);$('restartGame').addEventListener('click',startArcade);$('playAgain').addEventListener('click',startArcade);$('gameModal').addEventListener('click',e=>{if(e.target===$('gameModal'))closeArcade();});
