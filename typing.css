@@ -44,3 +44,27 @@ body{background:linear-gradient(180deg,#f8faff 0%,#fff 42%,#f7f9fd 100%);color:v
 @media(max-width:520px){.hero{padding:25px 17px}.game-grid{grid-template-columns:1fr}.game-card{min-height:0}.game-card p{min-height:0}.arcade-result{inset:95px 16px 16px}}
 .arcade-language-row{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-top:16px;color:#63728b;font-size:11px;font-weight:700}.arcade-language-row select{border:1px solid #d8e2f1;border-radius:9px;padding:8px 10px;background:#fff;color:#24436f;font:inherit}.arcade-target.target-enter{animation:targetEnter .32s ease both}.arcade-stage.balloon-pop .arcade-emoji{animation:balloonPop .4s ease both}@keyframes targetEnter{from{opacity:0;transform:translateY(-14px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes balloonPop{0%{transform:scale(1)}55%{transform:scale(1.35) rotate(8deg)}100%{transform:scale(.2);opacity:0}}
 @media(max-width:520px){.arcade-language-row{justify-content:space-between}}
+
+
+/* Next Level Typing Arcade — polished responsive card system */
+.game-grid{gap:18px;margin-top:22px}
+.game-card{isolation:isolate;min-height:292px;padding:22px 20px 19px;border-radius:22px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;box-shadow:0 10px 28px rgba(27,69,131,.07)}
+.game-card:before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,#2458c6,#68a1f2);z-index:-1}
+.game-purple:before{background:linear-gradient(90deg,#7654c8,#b39af4)}
+.game-orange:before{background:linear-gradient(90deg,#bd6a1c,#f0b36d)}
+.game-card:hover{transform:translateY(-5px);border-color:#b9cdf0;box-shadow:0 18px 38px rgba(27,69,131,.13)}
+.game-icon{width:58px;height:58px;display:grid;place-items:center;margin:2px 0 17px;border-radius:18px;background:#edf3ff;font-size:29px;box-shadow:inset 0 0 0 1px #dce8fb}
+.game-purple .game-icon{background:#f2edff;box-shadow:inset 0 0 0 1px #e5dcff}
+.game-orange .game-icon{background:#fff4e8;box-shadow:inset 0 0 0 1px #f8e5cf}
+.game-card>span{font-size:9px;letter-spacing:1.7px}
+.game-card h3{font-size:18px;letter-spacing:-.35px;margin:8px 0 7px}
+.game-card p{font-size:12px;line-height:1.75;margin:0 0 15px}
+.game-launch{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:11px 15px;border-radius:11px;font-size:11px;transition:background .18s ease,color .18s ease,transform .18s ease}
+.game-launch:active{transform:scale(.97)}
+.game-note{padding:15px 17px;border-radius:14px}
+.panel-heading{margin-top:30px}
+.game-count{font-weight:800}
+@media(min-width:761px){.game-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.game-card{min-height:275px;padding:18px 15px}.game-icon{width:52px;height:52px;border-radius:16px}}
+@media(max-width:520px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.game-card{min-height:0;padding:15px 12px;border-radius:17px}.game-icon{width:44px;height:44px;font-size:23px;margin-bottom:13px;border-radius:14px}.game-card h3{font-size:15px}.game-card p{font-size:11px;line-height:1.6;min-height:76px}.game-launch{width:100%;padding:10px 7px;font-size:10px;min-height:39px}.game-card>span{font-size:8px}.game-note{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.game-card,.game-launch{transition:none}.game-card:hover{transform:none}}
